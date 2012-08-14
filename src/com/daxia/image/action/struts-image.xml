@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="imageUpload" extends="struts-default">
+		<!-- <interceptors> <interceptor-stack name="fileUploadStack"> <interceptor-ref 
+			name="exception" /> <interceptor-ref name="alias" /> <interceptor-ref name="servletConfig" 
+			/> <interceptor-ref name="prepare" /> <interceptor-ref name="i18n" /> <interceptor-ref 
+			name="chain" /> <interceptor-ref name="debugging" /> <interceptor-ref name="profiling" 
+			/> <interceptor-ref name="scopedModelDriven" /> <interceptor-ref name="modelDriven" 
+			/> <interceptor-ref name="fileUpload"> <param name="maximumSize">10240</param> 
+			<param name="allowedTypes"> image/jpeg,image/gif,image/png</param> </interceptor-ref> 
+			<interceptor-ref name="checkbox" /> <interceptor-ref name="staticParams" 
+			/> <interceptor-ref name="actionMappingParams" /> <interceptor-ref name="params"> 
+			<param name="excludeParams"> dojo\..*,^struts\..*</param> </interceptor-ref> 
+			<interceptor-ref name="conversionError" /> <interceptor-ref name="validation"> 
+			<param name="excludeMethods"> input,back,cancel,browse</param> </interceptor-ref> 
+			<interceptor-ref name="workflow"> <param name="excludeMethods"> input,back,cancel,browse</param> 
+			</interceptor-ref> </interceptor-stack> </interceptors> -->
+
+
+		<interceptors>
+			<interceptor-stack name="fileUploadStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="profiling" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload">
+					<param name="maximumSize">1024000</param>
+					<param name="allowTypes">image/jpeg,image/gif,image/png</param>
+				</interceptor-ref>
+				<interceptor-ref name="checkbox"></interceptor-ref>
+				<interceptor-ref name="staticParams"></interceptor-ref>
+				<interceptor-ref name="actionMappingParams"></interceptor-ref>
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError"></interceptor-ref>
+				<interceptor-ref name="validation">
+					<param name="excludeMethods"> input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<action name="imageUpload" class="com.daxia.image.action.UploadImageAction">
+			<!-- <interceptor-ref name="basicStack"></interceptor-ref>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024000</param>
+				<param name="allowTypes">images/png,images/jpeg,images/gif</param>
+			</interceptor-ref> -->
+
+			<result name="input">/index.jsp</result>
+			<result name="success">/content/img_upload_success.jsp</result>
+		</action>
+	</package>
+
+</struts>
+    

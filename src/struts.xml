@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" 
+		/> <constant name="struts.devMode" value="false" /> <include file="example.xml"/> 
+		<package name="default" namespace="/" extends="struts-default"> <default-action-ref 
+		name="index" /> <action name="index"> <result type="redirectAction"> <param 
+		name="actionName">HelloWorld</param> <param name="namespace">/example</param> 
+		</result> </action> </package> -->
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>  
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+
+	<!-- login -->
+	<include file="com/daxia/login/action/struts-login.xml"></include>
+	<!-- register -->
+	<include file="com/daxia/register/action/struts-register.xml"></include>
+	<!-- upload text -->
+	<include file="com/daxia/upload/action/struts-upload.xml"></include>
+	<!-- upload image -->
+	<include file="com/daxia/image/action/struts-image.xml"></include>
+	<!-- Add packages here -->
+</struts>

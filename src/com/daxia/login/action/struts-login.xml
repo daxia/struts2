@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="login" extends="struts-default">
+		<!-- exception -->
+		<global-results>
+			<result name="sql">/exception.jsp</result>
+			<result name="root">/exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="sql" exception="java.sql.SQLException" />
+			<exception-mapping result="root" exception="java.lang.Exception" />
+		</global-exception-mappings>
+
+		<!-- action -->
+		<action name="login" class="com.daxia.login.action.LoginAction">
+			<result name="input">
+				/login.jsp
+			</result>
+			<result name="success">
+				/success_login.jsp
+			</result>
+		</action>
+	</package>
+</struts>

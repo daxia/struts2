@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="upload" location="10,10" size="280,140">
+    <action name="upload" location="66,58" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="upload_success.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="upload_success.jsp" path="/content/upload_success.jsp" location="75,192" size="150,55" />
+  <package name="upload" location="395,10" size="280,140">
+    <action name="upload" location="66,58" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="upload_success.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="upload_success.jsp" path="/content/upload_success.jsp" location="460,192" size="150,55" />
+</Struts2Diagram>
+

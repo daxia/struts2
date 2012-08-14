@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="upload" extends="struts-default">
+		<action name="upload" class="com.daxia.upload.action.UploadAction">
+			<interceptor-ref name="exception"></interceptor-ref>
+			<interceptor-ref name="i18n"></interceptor-ref>
+			<interceptor-ref name="fileUpload">
+				<param name="allowTypes">text/plain</param>
+				<param name="maximumSize">10240</param>
+			</interceptor-ref>
+			<param name="savePath">/content/</param>
+			<result name="success">/content/upload_success.jsp</result>
+		</action>
+		<!-- <action name="*"> <result>/content/upload.jsp</result> </action> -->
+	</package>
+</struts>

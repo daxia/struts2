@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <webResource name="login.jsp" path="/login.jsp" location="350,50" size="150,55" />
+  <include file="struts-login.xml" location="50,200" size="150,30" />
+  <include file="struts-register.xml" location="350,200" size="150,30" />
+  <include file="struts-upload.xml" location="50,350" size="150,30" />
+  <include file="struts-image.xml" location="350,350" size="150,30" />
+</Struts2Diagram>
+
